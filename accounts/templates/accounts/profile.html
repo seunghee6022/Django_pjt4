@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<h1>{{person.username}}님의 프로필</h1>
+<br>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="data:image/jpeg;base64,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" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">성 : {{person.last_name}}</h5>
+      <h5 class="card-title">이름 : {{person.first_name}}</h5>
+      <p>email : {{person.email}}</p>
+      <br>
+      <p class="card-text">
+          {{person.followings.count }}명이 팔로우하고 있습니다.
+          <br>
+        {{person.followers.count }}명을  팔로우하고 있습니다.
+      </p>
+    {% if user != person %}
+        {% if request.user not in person.followings.all %}
+       <a href="{% url 'accounts:follow' person.username %}" style="width: 15rem;" class="btn btn-primary">follow</a>
+        {% else %}
+        <a href="{% url 'accounts:follow' person.username %}" style="width: 15rem;" class="btn btn-primary">unfollow</a>
+        <p>당신은 {{person.username}}을 팔로우 하고 있습니다.</p>
+        {% endif %}
+    {% endif %}
+
+    </div>
+  </div>
+  <br>
+  <a class="text-decoration-none" href="{% url 'community:index' %}" >Home</a>
+
+  <hr/>
+
+
+  <p>내가 팔로우 하고 있는 사람들 follower</p>
+  {%for follower in person.followers.all %}
+  <p>{{follower}}</p>
+  {%endfor%}
+  <hr/>
+  <p>나를 팔로우 하고 있는 사람들 followings</p>
+  {%for following in person.followings.all %}
+  <p>{{following}}</p>
+  {%endfor%}
+
+{% endblock %}

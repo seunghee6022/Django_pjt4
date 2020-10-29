@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+{% if request.resolver_match.url_name == 'create' %}
+<h3>{{movie.title}}영화의 리뷰 쓰기</h3>
+<a href="{% url 'community:review_list' movie.pk %}">BACK</a>
+<form action="" method="POST">
+
+{% else %}
+<h3>{{movie.title}}영화의 리뷰 수정하기</h3>
+<a href="{% url 'community:review_list' movie.pk %}">BACK</a>
+<form action="" method="POST">
+{% endif %}
+
+{%csrf_token%}
+{% bootstrap_form review_form %}
+<button>SUMBIT</button>
+</form>
+
+{% endblock %}

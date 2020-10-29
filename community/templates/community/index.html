@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h2 class="text-center">영화 게시판</h2>
+
+<hr/>
+
+<div class="row row-cols-1 row-cols-md-3">
+   {% for movie in movies %}
+
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{movie.poster_url}}" class="card-img-top"  style="height: 30rem;">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{movie.title}}</h5>
+         <hr/>
+        <p class="card-text">
+          <ul class="d-flex flex-column">
+            <ul>감독 : {{movie.director}}</ul>
+            <ul class="mb-3">개봉일 : {{movie.open_date}}</ul>
+          <a href="{% url 'community:review_list' movie.pk %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">리뷰작성</a>
+
+             </ul>
+
+
+
+        </p>
+      </div>
+    </div>
+  </div>
+     {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

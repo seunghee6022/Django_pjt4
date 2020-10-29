@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% block body %}
+<h1>회원 가입</h1>
+<hr>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {%bootstrap_form form%}
+    <button>
+        회원가입
+    </button>
+    <a href="{% url 'community:index' %}">Back</a>
+</form>
+
+{% endblock %}
